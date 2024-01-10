@@ -14,13 +14,13 @@ function toPremitive(a) {
   if (a instanceof Date) {
     return a.toString();
   } else {
-    if(typeof a?.valueOf === "function") {
+    if (typeof a?.valueOf === "function") {
       const value = a.valueOf();
       if (!isObject(value)) {
         return value;
       }
     }
-    if(typeof a?.toString === "function") {
+    if (typeof a?.toString === "function") {
       const str = a.toString();
       if (!isObject(str)) {
         return str;
@@ -39,13 +39,13 @@ function toPremitiveWithHintNumber(a) {
   if (!isObject(a)) {
     return a;
   }
-  if(typeof a?.valueOf === "function") {
+  if (typeof a?.valueOf === "function") {
     const value = a.valueOf();
     if (!isObject(value)) {
       return value;
     }
   }
-  if(typeof a?.toString === "function") {
+  if (typeof a?.toString === "function") {
     const str = a.toString();
     if (!isObject(str)) {
       return str;
