@@ -72,7 +72,7 @@ $$
 \end{equation}
 $$
 
-両辺に2を掛けると、
+両辺に $n$ を掛けると、
 
 $$
 \begin{equation}
