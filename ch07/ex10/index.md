@@ -39,7 +39,7 @@ $$
 となる。オーダー記法で示すと、
 
 $$
-\mathcal{O}(\overline{P_n}) = \mathcal{O}\left({2^{ \log n } \over n}\right) = \mathcal{O}\left(1)\right)
+\mathcal{O}(\overline{P_n}) = \mathcal{O}\left({2^{ \log n } \over n}\right) = \mathcal{O}\left(1\right)
 $$
 
 となる。
