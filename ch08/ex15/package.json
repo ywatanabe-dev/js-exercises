@@ -1,0 +1,21 @@
+{
+  "name": "didact",
+  "version": "3.0.0",
+  "description": "A didactic alternative to React",
+  "license": "MIT",
+  "repository": "pomber/didact",
+  "author": "pomber",
+  "main": "didact.js",
+  "keywords": [
+    "react"
+  ],
+  "scripts": {
+    "start": "babel didact.js > bundle.js && serve"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.23.9",
+    "@babel/core": "^7.23.9",
+    "@babel/preset-react": "^7.23.3",
+    "serve": "^14.2.1"
+  }
+}
