@@ -26,7 +26,7 @@ f.call(null);
 f.apply(undefined);
 
 // 書き込み不可(nonwritable)なプロパティへの代入
-globalThis.undefined = 0;
+//globalThis.undefined = 0;
 
 // 外からeval内部のスコープの変数にアクセス
 const c = {};
