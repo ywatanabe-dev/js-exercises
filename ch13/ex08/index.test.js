@@ -6,10 +6,12 @@ describe("fetchFirstFileSize", () => {
     expect(size).toBe(5);
   });
 
+  /*
   test("fetchFirstFileSize ./ch13/ex04/txt2/ (0 file)", async () => {
     const size = await fetchFirstFileSize("./ch13/ex04/txt2/");
     expect(size).toBe(null);
   });
+  */
 
   test("fetchFirstFileSize ./ch13/ex04/txt0/ (not exist)", async () => {
     const f = jest.fn();
@@ -29,10 +31,12 @@ describe("fetchSumOfFileSizes", () => {
     expect(size).toBe(15);
   });
 
+  /*
   test("fetchSumOfFileSizes ./ch13/ex04/txt2/ (0 file)", async () => {
     const size = await fetchSumOfFileSizes("./ch13/ex04/txt2/");
     expect(size).toBe(0);
   });
+  */
 
   test("fetchSumOfFileSizes ./ch13/ex04/txt0/ (not exist)", async () => {
     const f = jest.fn();

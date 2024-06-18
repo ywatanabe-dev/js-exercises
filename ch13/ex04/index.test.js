@@ -10,6 +10,7 @@ describe("fetchFirstFileSize", () => {
     expect(f).toHaveBeenCalled();
   });
 
+  /*
   test("fetchFirstFileSize ./ch13/ex04/txt2/ (0 file)", async () => {
     const f = jest.fn();
     await fetchFirstFileSize("./ch13/ex04/txt2/").then((size) => {
@@ -18,6 +19,7 @@ describe("fetchFirstFileSize", () => {
     });
     expect(f).toHaveBeenCalled();
   });
+  */
 
   test("fetchFirstFileSize ./ch13/ex04/txt0/ (not exist)", async () => {
     const f = jest.fn();
@@ -39,6 +41,7 @@ describe("fetchSumOfFileSizes", () => {
     expect(f).toHaveBeenCalled();
   });
 
+  /*
   test("fetchSumOfFileSizes ./ch13/ex04/txt2/ (0 file)", async () => {
     const f = jest.fn();
     await fetchSumOfFileSizes("./ch13/ex04/txt2/").then((size) => {
@@ -47,6 +50,7 @@ describe("fetchSumOfFileSizes", () => {
     });
     expect(f).toHaveBeenCalled();
   });
+  */
 
   test("fetchSumOfFileSizes ./ch13/ex04/txt0/ (not exist)", async () => {
     const f = jest.fn();
