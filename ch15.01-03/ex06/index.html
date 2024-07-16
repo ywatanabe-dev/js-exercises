@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>入会完了のお知らせ</title>
+    <style>
+      table {
+        th,
+        td {
+          padding: 10px;
+          margin: 10px;
+          border: 1px solid black;
+        }
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/ua-parser-js/dist/ua-parser.min.js"></script>
+    <script src="/ch15.01-03/ex06/index.js" defer="true"></script>
+  </head>
+  <body>
+    <header>
+      <h1>入会完了のお知らせ</h1>
+    </header>
+    <p>
+      おめでとうございます。入会登録が完了しました。<br />
+      下記情報をご確認ください。
+    </p>
+
+    <table>
+      <tr>
+        <th scope="row">ご登録日</th>
+        <td id="date"></td>
+      </tr>
+      <tr>
+        <th scope="row">ご使用のブラウザ</th>
+        <td id="ua-browser"></td>
+      </tr>
+      <tr>
+        <th scope="row">ご使用の端末</th>
+        <td id="ua-device"></td>
+      </tr>
+      <tr>
+        <th scope="row">ご使用のOS</th>
+        <td id="ua-os"></td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XSS 例</title>
+    <script type="module">
+      const res = await fetch("/ch15.01-03/ex08/data.json");
+      const json = await res.json();
+      const profileDisplay = document.getElementById("profile-display");
+      profileDisplay.innerHTML = `<p>名前: ${json.name}</p><p>年齢: ${json.age}</p>`;
+    </script>
+  </head>
+  <body>
+    <h1>プロフィール</h1>
+    <div id="profile-display"></div>
+  </body>
+</html>

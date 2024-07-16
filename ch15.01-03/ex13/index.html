@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>家電オンラインショップ</title>
+    <script type="module" src="/ch15.01-03/ex13/index.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+      }
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+      }
+      nav {
+        background-color: #444;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+      }
+      nav a {
+        color: #fff;
+        margin: 0 15px;
+        text-decoration: none;
+      }
+      .container {
+        padding: 20px;
+      }
+      .search-bar {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+      }
+      .search-bar input {
+        width: 300px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px 0 0 5px;
+      }
+      .search-bar button {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-left: none;
+        border-radius: 0 5px 5px 0;
+        background-color: #333;
+        color: #fff;
+      }
+      .product-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+      .product-item {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin: 10px;
+        padding: 20px;
+        width: calc(25% - 40px);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      .product-item img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+      }
+      .product-item h3 {
+        margin: 10px 0;
+        font-size: 18px;
+      }
+      .product-item p {
+        color: #666;
+        font-size: 14px;
+      }
+      .product-item .price {
+        color: #e60000;
+        font-size: 20px;
+        margin: 10px 0;
+      }
+      .product-item button {
+        padding: 10px 20px;
+        border: none;
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      .cart {
+        float: right;
+        margin-right: 20px;
+      }
+      .cart img {
+        width: 30px;
+        height: 30px;
+      }
+      .account {
+        float: right;
+        margin-right: 20px;
+      }
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="cart">
+        <a href="#cart"
+          ><img src="./30" alt="カート"
+        /></a>
+      </div>
+      <div class="account">
+        <a href="#account"
+          ><img src="./30" alt="アカウント"
+        /></a>
+      </div>
+      <h1>家電オンラインショップ</h1>
+    </header>
+    <nav>
+      <a href="#home">ホーム</a>
+      <a href="#products">商品一覧</a>
+      <a href="#contact">お問い合わせ</a>
+      <a href="#about">会社情報</a>
+    </nav>
+    <div class="container">
+      <div class="search-bar">
+        <input type="text" placeholder="検索..." />
+        <button>検索</button>
+      </div>
+      <h2 id="products">商品一覧</h2>
+      <div class="product-list">
+        <div class="product-item">
+          <img src="./200" alt="商品1" />
+          <h3>商品1</h3>
+          <p>高品質の家電製品です。</p>
+          <p class="price">¥12,000</p>
+          <button>カートに追加</button>
+        </div>
+        <div class="product-item">
+          <img src="./200" alt="商品2" />
+          <h3>商品2</h3>
+          <p>最新モデルの家電です。</p>
+          <p class="price">¥25,000</p>
+          <button>カートに追加</button>
+        </div>
+        <div class="product-item">
+          <img src="./200" alt="商品3" />
+          <h3>商品3</h3>
+          <p>コストパフォーマンスの高い家電。</p>
+          <p class="price">¥8,000</p>
+          <button>カートに追加</button>
+        </div>
+        <div class="product-item">
+          <img src="./200" alt="商品4" />
+          <h3>商品4</h3>
+          <p>耐久性のある家電製品。</p>
+          <p class="price">¥15,000</p>
+          <button>カートに追加</button>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>&copy; 2024 家電オンラインショップ. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

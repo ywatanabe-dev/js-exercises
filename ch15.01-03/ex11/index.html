@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EVENT propagation, dispatch</title>
+    <script type="module">
+      const div = document.querySelector("#div");
+      const btn = document.querySelector("#btn");
+      div.addEventListener(
+        "click",
+        () => {
+          console.log("div");
+        },
+        { capture: true }
+      );
+      btn.addEventListener("click", () => {
+        console.log("button");
+      });
+
+      class RandomEventTarget extends EventTarget {
+        constructor() {
+          super();
+        }
+
+        trigger() {
+          const randomNumber = new CustomEvent("random", {
+            detail: Math.random(),
+          });
+          this.dispatchEvent(randomNumber);
+        }
+      }
+
+      const randomEventTarget = new RandomEventTarget();
+
+      // 1. htmlのpタグ要素を生成しなさい。また、ボタン要素の直後の位置にpタグ要素を配置しなさい。
+      const s = document.createElement("p");
+      div.append(s);
+
+      randomEventTarget.addEventListener("random", (e) => {
+        // 2. 生成済みのpタグ要素のテキストに、イベントの保持する乱数値を代入しなさい。
+        s.textContent = e.detail;
+      });
+
+      // 3. ボタンにイベントリスナを追加し、ボタン押下するごとに乱数値を変更しなさい。変更にはRandomEventTargetのtriggerメソッドを利用しなさい。
+      btn.addEventListener("click", () => {
+        randomEventTarget.trigger();
+      });
+
+      // 4. RandomEventTargetのtriggerメソッドによってイベントを発生させて、ページ読み込み時に乱数値を表示しなさい。
+      randomEventTarget.trigger();
+    </script>
+  </head>
+  <body>
+    <div id="div">
+      <button id="btn">ボタン</button>
+    </div>
+  </body>
+</html>

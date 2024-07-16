@@ -1,0 +1,4 @@
+{
+  "name": "Taro",
+  "age": "</p><iframe src=\"about:blank\" onload=\"alert('XSS')\"></iframe><p>"
+}

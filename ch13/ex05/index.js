@@ -77,13 +77,10 @@ function g3() {
       console.log(`${temp.name} has ${friends.length} friends!`);
     });
     */
-  return fetchUser().then(
-    (user) =>
-      new Promise(() =>
-        fetchUserFriends(user).then((friends) => {
-          console.log(`${user.name} has ${friends.length} friends!`);
-        })
-      )
+  return fetchUser().then((user) =>
+    fetchUserFriends(user).then((friends) => {
+      console.log(`${user.name} has ${friends.length} friends!`);
+    })
   );
 }
 
