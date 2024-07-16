@@ -9,7 +9,9 @@ jobs:
         with:
           node-version: 18
       - name: npm install
-        run: npm install
+        run: |
+          npm install
+          npx playwright install
       - name: npm test
         run: npm test
       - name: npm test:browser
