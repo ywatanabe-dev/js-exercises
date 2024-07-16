@@ -1,4 +1,9 @@
 (() => {
+  /*
+  THETAのcommand/execute WebAPIの仕様からcurlスクリプトを生成するブックマークレット。
+  GitHub上の以下のような仕様書のページで使う。
+  https://github.com/ricohapi/theta-api-specs/blob/main/theta-web-api-v2.1/commands/camera.list_files.md
+  */
   const command = document.querySelector(".markdown-body.entry-content.container-lg h1").innerText;
   const parameters = document.getElementById("user-content-parameters")
     .parentElement.nextElementSibling;
