@@ -13,4 +13,4 @@ jobs:
       - name: npm test
         run: npm test
       - name: npm test:browser
-        run: npm test:browser
+        run: npm run test:browser
