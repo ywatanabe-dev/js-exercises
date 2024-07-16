@@ -23,14 +23,14 @@ form.addEventListener("submit", (e) => {
 
   const toggle = document.createElement("input");
   // TODO: toggle が変化 (change) した際に label.style.textDecorationLine を変更しなさい
-  toggle.setAttribute("type", "checkbox");
+  toggle.type = "checkbox";
   toggle.addEventListener("change", (e) => {
     label.style.textDecorationLine = e.target.checked ? "line-through" : "";
   });
 
   const destroy = document.createElement("button");
   // TODO: destroy がクリック (click) された場合に elem を削除しなさい
-  destroy.innerText = "❌";
+  destroy.textContent = "❌";
   destroy.addEventListener("click", () => {
     list.removeChild(elem);
   });

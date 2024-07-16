@@ -1,6 +1,6 @@
 (() => {
-  const div = document.getElementById("editor-front");
-  const input = document.getElementById("editor-back");
+  const div = document.querySelector("#editor-front");
+  const input = document.querySelector("#editor-back");
   div.addEventListener("click", () => {
     input.focus();
   });

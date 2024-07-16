@@ -14,7 +14,7 @@
             // ここにコードを書いて完成させる
             product.hidden =
               selectedCategory !== "all" &&
-              product.attributes["data-category"].value !== selectedCategory;
+              product.dataset.category !== selectedCategory;
           });
         });
     </script>
