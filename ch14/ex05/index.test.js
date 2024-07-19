@@ -49,4 +49,10 @@ describe("getType", () => {
   test("Object", () => {
     expect(getType`${{ x: 1 }}`).toBe("object");
   });
+
+  /*
+  test("test${'A'}", () => {
+    expect(getType`test${"A"}`).toBe("teststring");
+  });
+  */
 });
