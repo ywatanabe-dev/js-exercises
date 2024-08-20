@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <title>inline circle test</title>
+    <meta charset="utf-8" />
+    <script type="module" src="/ch15.04-10/ex05/index.js"></script>
+  </head>
+  <body>
+    <p>
+      The document has one marble:
+      <inline-circle data-testid="circle1"></inline-circle>. The HTML parser
+      instantiates two more marbles:
+      <inline-circle
+        data-testid="circle2"
+        diameter="1.2em"
+        color="blue"
+        border-color="blue"
+      ></inline-circle>
+      <inline-circle
+        data-testid="circle3"
+        diameter=".6em"
+        color="gold"
+        border-color="green"
+      ></inline-circle
+      >. How many marbles does the document contain now?
+    </p>
+  </body>
+</html>

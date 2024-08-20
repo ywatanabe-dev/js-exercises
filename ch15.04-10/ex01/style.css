@@ -1,0 +1,92 @@
+/*
+インターネット黎明期のデザインは、シンプルで、派手な背景色やフォントが多用されていたのが特徴です。
+また、ビジュアル的に強調されたボタンやリンクがよく使われました。このデザインスタイルを反映させたCSSに変更します。
+*/
+
+/* 背景を派手な色に変更 */
+body {
+  background-color: #000080; /* 濃い青 背景色 */
+  color: #00ff00; /* 明るい緑 文字色 */
+  font-family: "Courier New", Courier, monospace; /* フォント */
+}
+
+/* フォームと入力フィールドのデザインを変更 */
+form {
+  margin: 20px; /* 余白のサイズ */
+}
+
+/* フォームのデザイン */
+input[type="text"] {
+  width: 300px; /* フォームの幅　*/
+  padding: 5px; /* フォーム内側の余白のサイズ */
+  border: 2px solid #00ff00; /* 境界線のデザイン */
+  background-color: #000; /* フォーム内側の色 */
+  color: #00ff00; /* フォーム内文字の色 */
+}
+
+/* ボタンのデザイン */
+button {
+  padding: 5px 10px; /* ボタン内側の余白のサイズ */
+  border: 2px solid #00ff00; /* 境界線のデザイン */
+  background-color: #000; /* ボタン内側の色 */
+  color: #00ff00; /* ボタン内文字の色 */
+  font-weight: bold; /* ボタン内文字の太さ */
+  cursor: pointer; /* ボタンに合わせた時のカーソルのスタイル */
+}
+
+/* ボタンのホバー時の効果 */
+button:hover {
+  background-color: #00ff00; /* ボタン内側の色 */
+  color: #000080; /* ボタン内文字の色 */
+}
+
+/* ToDoリストのデザイン */
+ul#todo-list {
+  list-style-type: none; /* リスト項目要素のマーカー */
+  padding: 0; /* リスト内側の余白のサイズ */
+  margin: 20px; /* 余白のサイズ */
+}
+
+li {
+  margin: 10px 0; /* リスト項目要素間の余白のサイズ */
+  padding: 10px; /* リスト項目要素内側の余白のサイズ */
+  background-color: #000; /* リスト項目要素の背景色 */
+  border: 2px solid #00ff00; /* リスト項目要素の境界線 */
+}
+
+li .view {
+  display: flex; /* リスト項目内の要素を並列に並べる */
+  align-items: center; /* リスト項目内の文字を中央揃え */
+}
+
+li .toggle {
+  margin-right: 10px; /* トグル要素右の余白のサイズ */
+}
+
+li label {
+  flex-grow: 1; /* リストのラベルのフレックス伸長係数 */
+  color: #00ff00; /* リストのラベルの文字の色 */
+}
+
+li button.destroy {
+  background-color: #000; /* ボタンに合わせた時の背景色 */
+  color: #00ff00; /* ボタンに合わせた時の文字色 */
+  font-size: 16px; /* ボタンのxマークのサイズ */
+  cursor: pointer; /* ボタンに合わせた時のカーソルのスタイル */
+}
+
+/* 完了済みToDoのデザイン */
+.completed {
+  text-decoration: line-through; /* 取り消し線 */
+  color: #ff0000; /* 赤で強調 */
+}
+
+/* リンクのスタイルをインターネット黎明期風に */
+a {
+  color: #00ff00; /* リンクの色 */
+  text-decoration: underline; /* リンクに下線をつける */
+}
+
+a:hover {
+  color: #ff0000; /* リンクに合わせた時の文字の色 */
+}

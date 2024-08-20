@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <title>Simple ToDo</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="/ch15.04-10/ex02/index.js"></script>
+    <link rel="stylesheet" href="/ch15.04-10/ex02/style.css" />
+  </head>
+  <body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="bg-white shadow-lg rounded-lg p-6 w-full max-w-md">
+      <h1 class="text-2xl font-bold text-center mb-4">Simple ToDo</h1>
+      <form id="new-todo-form" class="flex mb-4">
+        <input
+          type="text"
+          id="new-todo"
+          placeholder="What needs to be done?"
+          class="flex-grow border border-gray-300 rounded-l-lg p-2 focus:outline-none focus:ring focus:border-blue-300"
+        />
+        <button
+          class="bg-blue-500 text-white px-4 py-2 rounded-r-lg hover:bg-blue-600"
+        >
+          Add
+        </button>
+      </form>
+      <ul id="todo-list" class="list-none space-y-2">
+        <!-- JavaScript によって動的に追加される要素がここに入ります -->
+      </ul>
+    </div>
+
+    <template id="todo-template">
+      <li
+        class="bg-gray-50 border border-gray-300 rounded-lg p-2 flex items-center justify-between"
+      >
+        <div class="view flex items-center">
+          <input class="toggle mr-2" type="checkbox" />
+          <label class="content"></label>
+        </div>
+        <button class="destroy text-red-500 hover:text-red-700">❌</button>
+      </li>
+    </template>
+  </body>
+</html>

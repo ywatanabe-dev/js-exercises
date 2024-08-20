@@ -1,0 +1,116 @@
+/* 以下は講師が適当に ChatGPT に生成させた CSS */
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f8f2f7;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#new-todo-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#new-todo {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+#new-todo::placeholder {
+  color: #bbb;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff8cba;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+button:hover {
+  background-color: #ff6da1;
+}
+
+ul#todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul#todo-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+ul#todo-list li.completed .content {
+  text-decoration: line-through;
+  color: #bbb;
+}
+
+ul#todo-list li .view {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+ul#todo-list li .toggle {
+  margin-right: 15px;
+}
+
+ul#todo-list li .content {
+  flex-grow: 1;
+}
+
+ul#todo-list li .destroy {
+  background: none;
+  border: none;
+  color: #ff6da1;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+ul#todo-list li .destroy:hover {
+  color: #ff8cba;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+}
+
+footer li {
+  display: inline;
+  margin: 0 10px;
+}
+
+footer a {
+  color: #ff8cba;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
