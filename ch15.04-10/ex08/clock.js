@@ -25,5 +25,5 @@ document.querySelector("#clock .hands").appendChild(secondhand);
   hourhand.setAttribute("transform", `rotate(${hourangle},50,50)`);
   secondhand.setAttribute("transform", `rotate(${secangle},50,50)`);
   // 10秒後にこの関数を再度実行する。
-  setTimeout(updateClock, 10000);
+  setTimeout(updateClock, 1);
 })(); // ここで関数を即座に実行していることに注意。

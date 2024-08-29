@@ -52,11 +52,11 @@ document.querySelector("#all").addEventListener("click", (e) => {
 document.querySelector("#active").addEventListener("click", (e) => {
   e.preventDefault();
   window.history.pushState(null, "", "/ch15.04-10/ex12/active");
-  renderTodos(todos.filter((todo) => todo.completed === false));
+  renderTodos(todos.filter((todo) => !todo.completed));
 });
 
 document.querySelector("#completed").addEventListener("click", (e) => {
   e.preventDefault();
   window.history.pushState(null, "", "/ch15.04-10/ex12/completed");
-  renderTodos(todos.filter((todo) => todo.completed === true));
+  renderTodos(todos.filter((todo) => todo.completed));
 });

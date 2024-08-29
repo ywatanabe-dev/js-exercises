@@ -79,9 +79,7 @@
       }
 
       /* NOTE: scrollTo または scrollIntoView でスムーズにスクロールしなさい  */
-      window.scrollTo({
-        left: target.offsetLeft,
-        top: target.offsetTop,
+      target.scrollIntoView({
         behavior: "smooth",
       });
     });
