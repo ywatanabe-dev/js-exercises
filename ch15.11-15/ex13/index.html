@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI chat</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .chat-container {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        height: 600px; /* 固定サイズ */
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .chat-box {
+        flex: 1;
+        padding: 10px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+      }
+      .message {
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+      }
+      .message.user {
+        background: #e0f7fa;
+        align-self: flex-end;
+        text-align: right;
+      }
+      .message.bot {
+        background: #c5cae9;
+        align-self: flex-start;
+        text-align: left;
+      }
+      .message-form {
+        display: flex;
+        border-top: 1px solid #ddd;
+        padding: 10px;
+        background-color: #f0f0f0;
+      }
+      .message-form input {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      .message-form button {
+        padding: 10px;
+        border: none;
+        background: #00796b;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chat-container">
+      <div id="chat" class="chat-box"></div>
+      <form class="message-form">
+        <input type="text" class="form" placeholder="メッセージを入力..." />
+        <button type="submit">送信</button>
+      </form>
+    </div>
+    <script src="/ch15.11-15/ex13/index.js"></script>
+  </body>
+</html>
