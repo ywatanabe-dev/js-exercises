@@ -15,8 +15,7 @@ broadcast.onmessage = async (event) => {
 };
 
 function initDB(db) {
-  const store = db.createObjectStore("tasks", { keyPath: "id" });
-  store.createIndex("date", "date");
+  db.createObjectStore("tasks", { keyPath: "id" });
 }
 
 async function writeEntries(entry) {
@@ -49,9 +48,8 @@ async function readAllEntries() {
       const transaction = db.transaction(["tasks"], "readwrite");
       transaction.onerror = reject;
       const store = transaction.objectStore("tasks");
-      const index = store.index("date");
       const result = [];
-      index.openCursor().onsuccess = (event) => {
+      store.openCursor().onsuccess = (event) => {
         const cursor = event.target.result;
         if (cursor) {
           result.push({
@@ -62,6 +60,7 @@ async function readAllEntries() {
           });
           cursor.continue();
         } else {
+          result.sort((a, b) => a.date - b.date);
           resolve(result);
         }
       };
@@ -144,7 +143,6 @@ function appendToDoItem(task) {
       status: task.status,
       date: task.date,
     });
-    broadcast.postMessage({ type: "update" });
     label.style.textDecorationLine =
       task.status === "completed" ? "line-through" : "none";
   });
