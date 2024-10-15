@@ -37,7 +37,7 @@ export class ThreadPool {
     for (let i = 0; i < this.#numberOfThreads; i++) {
       // スレッドを立ち上げる
       const worker = new threads.Worker(`${__dirname}/threads.js`);
-      // ポートの片側を転送
+      // スレッドでタスクの待ち受けを開始するコマンドを送る
       worker.postMessage({ name: "start" });
       await new Promise((complete) => {
         worker.on("message", async (message) => {
