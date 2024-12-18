@@ -1,0 +1,17 @@
+(define (format-time seconds)
+  (let* ((japan-offset (+ seconds (* 9 3600)))
+         (hours (mod (/ japan-offset 3600) 24))
+         (minutes (/ (mod japan-offset 3600) 60)))
+    (string-append (if (< hours 10) "0" "") (number->string hours) ":"
+                   (if (< minutes 10) "0" "") (number->string minutes))))
+
+(define (print-simple-clock)
+  (let ((current-time (get-time)))
+    (print (format-time current-time))))
+
+(do ()
+    (#f)
+  (let ((start (get-time)))
+    (print-simple-clock)
+    (do ()
+        ((>= (- (get-time) start) 60)))))

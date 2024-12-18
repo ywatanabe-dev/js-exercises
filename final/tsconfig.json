@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    // package.jsonでtype: "module"を指定しているので、出力されるJSのモジュール形式がES Moduleになる
+    "module": "Node16",
+    // Nodeがimportはimportのモジュール解決方式、requireはrequireのモジュール解決方式を使う
+    "moduleResolution": "Node16",
+    // 型チェックが厳密になる。JSのプロジェクトに徐々に導入するのではなく最初からTSで始める場合、基本有効にする
+    "strict": true,
+    // JSファイルを出力しない
+    "noEmit": true,
+    // 出力されるJSがESのどのバージョンと互換性を持ったJSになるか
+    "target": "ES2022",
+    // ソースマップ(JS実行時例外のスタックトレースを変換前のTSのファイルと行番号で出力する仕組み)を有効にする
+    // "sourcemap"オプションがJSと別ファイルでソースマップを出力するのに対して、
+    // "inlineSourcemap"はソースマップを本体のJSと同じファイルに埋め込む。
+    "inlineSourceMap": true,
+    // import { x } from "./foo.ts" を許可する
+    "allowImportingTsExtensions": true,
+    // デフォルトエクスポートが設定されていないモジュールに対して、
+    // import React from "react"; のようなインポートを許可する
+    "allowSyntheticDefaultImports": true
+  },
+  // package.jsonでtype: "module"を指定しているので、ts-nodeで実行する場合もesmである必要がある
+  "ts-node": {
+    "esm": true
+  }
+}
