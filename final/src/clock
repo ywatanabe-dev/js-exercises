@@ -2,16 +2,59 @@
   (let* ((japan-offset (+ seconds (* 9 3600)))
          (hours (mod (/ japan-offset 3600) 24))
          (minutes (/ (mod japan-offset 3600) 60)))
-    (string-append (if (< hours 10) "0" "") (number->string hours) ":"
-                   (if (< minutes 10) "0" "") (number->string minutes))))
+    (list (/ hours 10) (mod hours 10) 10
+                   (/ minutes 10) (mod minutes 10))))
 
-(define (print-simple-clock)
+(define ascii-digits
+  '((" 000 " "0   0" "0   0" "0   0" " 000 ")
+    ("  1  " " 11  " "  1  " "  1  " " 111 ")
+    (" 222 " "2   2" "  22 " " 2   " "22222")
+    (" 333 " "3   3" "  33 " "3   3" " 333 ")
+    ("4  4"  "4  4"  "44444" "   4"  "   4")
+    ("55555" "5    " "5555 " "    5" "5555 ")
+    (" 666 " "6    " "6666 " "6   6" " 666 ")
+    ("77777" "    7" "   7 " "  7  " " 7   ")
+    (" 888 " "8   8" " 888 " "8   8" " 888 ")
+    (" 999 " "9   9" " 9999" "    9" " 999 ")
+    ("     " "  :  " "     " "  :  " "     ")))
+
+(define (digit-to-ascii digit)
+  (if (&& (>= digit 0) (< digit 11))
+      (list-ref ascii-digits digit)
+      (print "Invalid digit")))
+
+(define (take lst n)
+  (if (|| (= n 0) (null? lst))
+      '()
+      (cons (car lst) (take (cdr lst) (- n 1)))))
+
+(define (drop lst n)
+  (if (= n 0)
+      lst
+      (drop (cdr lst) (- n 1))))
+
+(define (time-to-ascii time-digits)
+  (let ((ascii-lines (list "" "" "" "" "")))
+    (do ((digits time-digits (cdr digits)))
+        ((null? digits) ascii-lines)
+      (let ((ascii-digit (digit-to-ascii (car digits))))
+        (do ((i 0 (+ i 1)))
+            ((= i 5))
+          (set! ascii-lines
+                (append (take ascii-lines i)
+                        (list (string-append (list-ref ascii-lines i) (list-ref ascii-digit i) "  "))
+                        (drop ascii-lines (+ i 1)))))))))
+
+(define (print-digital-clock)
   (let ((current-time (get-time)))
-    (print (format-time current-time))))
+    (let ((ascii-clock (append (time-to-ascii (format-time current-time)) '(" "))))
+      (do ((lines ascii-clock (cdr lines)))
+          ((null? lines))
+        (print (car lines))))))
 
 (do ()
     (#f)
   (let ((start (get-time)))
-    (print-simple-clock)
+    (print-digital-clock)
     (do ()
         ((>= (- (get-time) start) 60)))))

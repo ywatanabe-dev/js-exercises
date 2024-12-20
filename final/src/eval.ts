@@ -231,6 +231,7 @@ const primitives: {
   { name: "char->integer", func: charToInteger },
   { name: "number->string", func: numberToString },
   { name: "append", func: append },
+  { name: "list", func: list },
 ];
 
 export const primitiveBindings = bindVars(
@@ -549,6 +550,10 @@ function numberToString(args: LispVal[]): LispVal | LispError {
       found: args,
     };
   }
+}
+
+function list(args: LispVal[]): LispVal | LispError {
+  return args;
 }
 
 function apply(func: LispVal, args: LispVal[]): LispVal | LispError {
